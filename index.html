@@ -4,11 +4,835 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="p:domain_verify" content="4902bbf45fe4f81bed1552b65912c3f5">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; img-src 'self' https: data:; frame-src https://tryhackme.com https://cybermap.kaspersky.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'">
-  <title>AAROK</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/animsition.min.css">
-  <link rel="stylesheet" href="css/aarok.css">
-  <meta name="description" content="Découvrez AAROK - Un gamer et un passionné de cybersécurité">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; img-src 'self' https: data:; frame-src https://tryhackme.com https://cybermap.kaspersky.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Aarok">
+  <meta name="description" content="AAROK, profil cybersécurité offensive et développement : pentesting Linux et Windows, TryHackMe, scripts, outils et projets techniques.">
+  <meta name="keywords" content="cybersécurité, pentest, hacker éthique, Linux, Windows, Nmap, TryHackMe, sécurité informatique, red team, scripts sécurité">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="AAROK">
+  <meta property="og:title" content="AAROK - Cybersécurité offensive et projets techniques">
+  <meta property="og:description" content="Profil cybersécurité, pentesting, scripts et projets techniques par AAROK.">
+  <meta property="og:url" content="https://k413mp3r4.github.io/AAROK/">
+  <meta property="og:image" content="https://k413mp3r4.github.io/AAROK/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AAROK - Cybersécurité offensive">
+  <meta name="twitter:description" content="Pentesting, TryHackMe, scripts sécurité et projets techniques.">
+  <meta name="twitter:image" content="https://k413mp3r4.github.io/AAROK/img/logo.png">
+  <link rel="canonical" href="https://k413mp3r4.github.io/AAROK/">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preload" as="image" href="img/hero-bg.jpg">
+  <title>AAROK - Cybersécurité offensive et projets techniques</title>
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --panel: #111118;
+      --panel-soft: #181822;
+      --text: #f7f7fb;
+      --muted: #b8b9c7;
+      --line: rgba(255, 255, 255, 0.12);
+      --purple: #8a2be2;
+      --purple-light: #a259ff;
+      --cyan: #03c4eb;
+      --warn: #ffb23f;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    img,
+    iframe {
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: #66e6ff;
+      outline: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(8, 8, 12, 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--purple-light);
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.58)),
+        url("img/hero-bg.jpg") center / cover no-repeat;
+    }
+
+    .hero-inner {
+      padding: 88px 0;
+      max-width: 760px;
+    }
+
+    .hero-logo {
+      width: 118px;
+      height: auto;
+      margin-bottom: 26px;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 500;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 6px;
+      color: var(--text);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .button.primary {
+      border-color: var(--purple-light);
+      background: var(--purple);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      color: var(--text);
+      border-color: var(--cyan);
+      transform: translateY(-1px);
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 14px 0 0;
+    }
+
+    .divider {
+      width: 54px;
+      height: 3px;
+      margin: 18px auto 0;
+      background: var(--purple-light);
+    }
+
+    .dark-band {
+      background: var(--panel);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .about-grid img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    .content-panel {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .content-panel h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+    }
+
+    .content-panel p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .embed-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .embed-card {
+      min-height: 270px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .embed-card img,
+    .embed-card iframe {
+      width: 100%;
+      border: 0;
+      border-radius: 6px;
+      background: #08080c;
+    }
+
+    .stats-card {
+      min-height: 270px;
+      display: grid;
+      align-content: center;
+      gap: 18px;
+    }
+
+    .stats-card h3 {
+      margin: 0;
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+
+    .stats-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stat-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .stat-pill {
+      padding: 14px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0d0d14;
+      text-align: center;
+    }
+
+    .stat-pill strong {
+      display: block;
+      color: var(--cyan);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .stat-pill span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .tryhackme-card {
+      min-height: 0;
+    }
+
+    .tryhackme-card iframe {
+      display: block;
+      height: 170px;
+      background: transparent;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .cert-card {
+      min-height: 152px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(138, 43, 226, 0.18), rgba(3, 196, 235, 0.08)), var(--panel-soft);
+    }
+
+    .cert-card span {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(3, 196, 235, 0.12);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .cert-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .cert-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-card,
+    .social-card,
+    .project-card {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .service-card:hover,
+    .social-card:hover,
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(162, 89, 255, 0.65);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--purple);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3,
+    .project-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+
+    .service-card p,
+    .project-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .notice {
+      max-width: 900px;
+      margin: 0 auto 30px;
+      padding: 16px;
+      border: 1px solid rgba(255, 178, 63, 0.5);
+      border-radius: 8px;
+      color: #ffd99d;
+      background: rgba(255, 178, 63, 0.08);
+      text-align: center;
+    }
+
+    .social-section {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+        url("img/subscribe-bg.jpg") center / cover no-repeat;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .social-card {
+      color: var(--text);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .portfolio-grid a {
+      display: block;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+    }
+
+    .portfolio-grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      filter: grayscale(1);
+      transition: filter 160ms ease, transform 160ms ease;
+      loading: lazy;
+    }
+
+    .portfolio-grid a:hover img,
+    .portfolio-grid a:focus-visible img {
+      filter: grayscale(0);
+      transform: scale(1.03);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      background: #08080c;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid,
+      .embed-grid,
+      .services-grid,
+      .cert-grid,
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-list {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "AAROK",
+    "url": "https://k413mp3r4.github.io/AAROK/",
+    "sameAs": [
+      "https://github.com/K413MP3R4",
+      "https://www.youtube.com/@Aarok.gaming",
+      "https://www.twitch.tv/aar0ck",
+      "https://www.tiktok.com/@aarok.tv"
+    ],
+    "knowsAbout": ["Cybersécurité", "Pentesting", "Linux", "Windows", "TryHackMe", "Développement"]
+  }
+  </script>
 </head>
-<body>
+<body oncontextmenu="return false">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#hero" aria-label="Accueil AAROK">
+        <img src="img/logo.png" alt="Logo AAROK" width="42" height="42">
+        <span>K413MP3R4</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#about">Performance</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projets</a>
+        <a href="#portfolio">Photos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <img class="hero-logo" src="img/logo.png" alt="Logo AAROK" width="140" height="140">
+        <p class="eyebrow">Cybersécurité offensive · développement · labs</p>
+        <h1>K413MP3R4</h1>
+        <h2>Spécialiste en cybersécurité Linux, Windows et environnements connectés.</h2>
+        <div class="actions">
+          <a class="button primary" href="#about">À propos de moi</a>
+          <a class="button" href="#services">Voir les services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="dark-band">
+      <div class="container">
+        <div class="section-head">
+          <h2>Tableau des performances</h2>
+          <div class="divider"></div>
+          <p>TryHackMe, GitHub et projets techniques autour de la sécurité informatique.</p>
+        </div>
+
+        <div class="embed-grid">
+          <article class="embed-card stats-card">
+            <div>
+              <h3>Profil technique GitHub</h3>
+              <p>Projets publics, scripts personnels et expérimentations autour de la cybersécurité, de l'automatisation et du développement.</p>
+            </div>
+            <div class="stat-list" aria-label="Résumé du profil technique">
+              <div class="stat-pill">
+                <strong>GitHub</strong>
+                <span>Projets publics</span>
+              </div>
+              <div class="stat-pill">
+                <strong>Labs</strong>
+                <span>TryHackMe</span>
+              </div>
+              <div class="stat-pill">
+                <strong>Sec</strong>
+                <span>Pentest & scripts</span>
+              </div>
+            </div>
+            <a href="https://github.com/K413MP3R4" target="_blank" rel="noopener noreferrer">Voir le profil GitHub</a>
+          </article>
+          <article class="embed-card tryhackme-card">
+            <iframe title="Badge TryHackMe public" src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2812137" height="170" loading="lazy"></iframe>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top: 52px;">
+          <h2>Certifications & parcours</h2>
+          <div class="divider"></div>
+          <p>Références professionnelles et objectifs de progression en cybersécurité et informatique.</p>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card">
+            <span>Cybersécurité</span>
+            <h3>CompTIA Security+</h3>
+            <p>Fondations sécurité, risques, réseaux, identité, cryptographie et bonnes pratiques défensives.</p>
+          </article>
+          <article class="cert-card">
+            <span>Pentest</span>
+            <h3>CEH / Ethical Hacking</h3>
+            <p>Méthodologie de test d'intrusion, reconnaissance, exploitation contrôlée et reporting.</p>
+          </article>
+          <article class="cert-card">
+            <span>Réseaux</span>
+            <h3>Cisco CCNA</h3>
+            <p>Adressage IP, routage, commutation, services réseau et bases solides d'administration.</p>
+          </article>
+          <article class="cert-card">
+            <span>Cloud</span>
+            <h3>Azure Security Fundamentals</h3>
+            <p>Identité, accès, sécurité cloud, gouvernance et protection des environnements Microsoft.</p>
+          </article>
+          <article class="cert-card">
+            <span>Labs</span>
+            <h3>TryHackMe Jr Penetration Tester</h3>
+            <p>Parcours pratique orienté reconnaissance, web, exploitation, Linux et Windows.</p>
+          </article>
+          <article class="cert-card">
+            <span>IT</span>
+            <h3>Google Cybersecurity Certificate</h3>
+            <p>SOC, analyse d'incidents, SIEM, Python, Linux et culture sécurité opérationnelle.</p>
+          </article>
+        </div>
+
+        <div class="about-grid" style="margin-top: 34px;">
+          <img src="img/about-img.jpg" alt="Illustration cybersécurité AAROK" loading="lazy">
+          <article class="content-panel">
+            <h3>Mon parcours en cybersécurité</h3>
+            <p>En parallèle de mes activités de développement et de modding, je me forme sur des labs pratiques et des environnements simulés. Mes compétences couvrent la reconnaissance réseau, l'énumération de services, le scan avec Nmap et l'analyse de failles classiques comme LFI, RCE ou injection SQL.</p>
+            <p>J'approfondis aussi l'élévation de privilèges Linux et Windows, l'analyse des permissions système, les tâches planifiées et les exécutables mal configurés. Cette approche m'aide à sécuriser mes propres outils en comprenant les méthodes utilisées par les attaquants.</p>
+            <h3>Pourquoi la cybersécurité est cruciale</h3>
+            <p>Les cyberattaques ciblent autant les particuliers que les entreprises. Une faille peut exposer des données personnelles, des infrastructures sensibles ou des systèmes entiers. La cybersécurité est donc une nécessité pour protéger les usages numériques.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Centre de téléchargement</h2>
+          <div class="divider"></div>
+          <p>Outils, scripts et projets disponibles sur GitHub.</p>
+        </div>
+
+        <div class="notice">
+          Tous les contenus présentés ici sont fournis à des fins éducatives et démonstratives uniquement. Aucun usage illégal n'est encouragé.
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">S</div>
+            <h3>Software</h3>
+            <p>Collections de ressources, d'expérimentations et de projets techniques.</p>
+            <a href="https://github.com/K413MP3R4" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">C</div>
+            <h3>Scripts</h3>
+            <p>Scripts sécurité, automatisation et outils de développement.</p>
+            <a href="https://github.com/K413MP3R4" target="_blank" rel="noopener noreferrer">Voir le profil GitHub</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">K</div>
+            <h3>Kali / Sécurité</h3>
+            <p>Outils de cybersécurité, méthodologies de lab et ressources défensives.</p>
+            <a href="https://github.com/K413MP3R4" target="_blank" rel="noopener noreferrer">Explorer les outils</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-section" aria-labelledby="social-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="social-title">Réseaux sociaux</h2>
+          <div class="divider"></div>
+          <p>Retrouver AAROK sur les plateformes principales.</p>
+        </div>
+        <div class="social-grid">
+          <a class="social-card" href="https://discord.gg/votreLien" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a class="social-card" href="https://www.twitch.tv/aar0ck" target="_blank" rel="noopener noreferrer">Twitch</a>
+          <a class="social-card" href="https://www.youtube.com/@Aarok.gaming" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a class="social-card" href="https://www.tiktok.com/@aarok.tv" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="dark-band">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projets en cours</h2>
+          <div class="divider"></div>
+          <p>Exemples de travaux et d'environnements techniques.</p>
+        </div>
+        <div class="services-grid">
+          <article class="project-card">
+            <h3>Kali Linux</h3>
+            <p>Environnement de test, reconnaissance et exercices de sécurité.</p>
+          </article>
+          <article class="project-card">
+            <h3>Web Service</h3>
+            <p>Expérimentations web, durcissement et outils de démonstration.</p>
+          </article>
+          <article class="project-card">
+            <h3>Outils</h3>
+            <p>Scripts personnels, automatisation et analyses techniques.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <h2>Photos</h2>
+          <div class="divider"></div>
+          <p>Galerie visuelle conservée depuis le site original.</p>
+        </div>
+        <div class="portfolio-grid">
+          <a href="img/portfolio/portfolio-01-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-01-thumbnail.jpg" alt="Portfolio Kali Linux" loading="lazy"></a>
+          <a href="img/portfolio/portfolio-02-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-02-thumbnail.jpg" alt="Portfolio service web" loading="lazy"></a>
+          <a href="img/portfolio/portfolio-03-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-03-thumbnail.jpg" alt="Portfolio chiffrement" loading="lazy"></a>
+          <a href="img/portfolio/portfolio-04-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-04-thumbnail.jpg" alt="Portfolio site web" loading="lazy"></a>
+          <a href="img/portfolio/portfolio-05-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-05-thumbnail.jpg" alt="Portfolio outil IP" loading="lazy"></a>
+          <a href="img/portfolio/portfolio-06-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-06-thumbnail.jpg" alt="Portfolio outil sécurité" loading="lazy"></a>
+          <a href="img/portfolio/portfolio-07-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-07-thumbnail.jpg" alt="Portfolio script sécurité" loading="lazy"></a>
+          <a href="img/portfolio/portfolio-08-large.jpg" target="_blank" rel="noopener noreferrer"><img src="img/portfolio/portfolio-08-thumbnail.jpg" alt="Portfolio reconnaissance" loading="lazy"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-band" aria-labelledby="cybermap-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="cybermap-title">Cybermap</h2>
+          <div class="divider"></div>
+          <p>Observation des cyberattaques en temps réel via Kaspersky.</p>
+        </div>
+        <article class="embed-card">
+          <iframe title="Cybermap Kaspersky" src="https://cybermap.kaspersky.com/en/widget/dynamic/dark" height="520" loading="lazy" allowfullscreen></iframe>
+          <p style="margin: 14px 0 0; color: var(--muted); text-align: center;">Si la carte ne s'affiche pas, consulter la <a href="https://cybermap.kaspersky.com" target="_blank" rel="noopener noreferrer">cybermap Kaspersky</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <div class="divider"></div>
+          <p>Une question ? Besoin de conseils d'utilisation ?</p>
+        </div>
+        <div class="contact-list">
+          <span>France</span>
+          <a href="https://github.com/K413MP3R4" target="_blank" rel="noopener noreferrer">github.com/K413MP3R4</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>&copy; 2017-2026 <strong>Aarok</strong>. Tous droits réservés.</div>
+      <div>Design par <a href="https://github.com/K413MP3R4" target="_blank" rel="noopener noreferrer">AarokDesign</a></div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      var key = event.key.toLowerCase();
+      var blocked =
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && ["i", "j", "c"].includes(key)) ||
+        (event.ctrlKey && ["u", "s"].includes(key));
+
+      if (blocked) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
