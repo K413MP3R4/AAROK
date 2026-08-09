@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aarok News Studio — outil interne de publication</title>
+<meta name="description" content="Outil interne, non commercial, de production et de publication de vidéos courtes d'actualité jeu vidéo sur la chaîne YouTube Aarok.">
+<style>
+ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f17;color:#f5f7fb;line-height:1.65}
+ main{max-width:900px;margin:0 auto;padding:40px 18px}
+ a{color:#25f4ee} h1{font-size:32px;line-height:1.2;margin-bottom:6px} h2{font-size:20px;margin-top:32px}
+ .muted{color:#a8b0bd;font-size:14px}
+ .panel{border:1px solid #263244;background:#121826;border-radius:8px;padding:18px;margin-top:22px}
+ .steps{counter-reset:s;list-style:none;padding:0}
+ .steps li{counter-increment:s;padding:10px 0 10px 42px;position:relative;border-bottom:1px solid #1c2534}
+ .steps li:before{content:counter(s);position:absolute;left:0;top:10px;width:26px;height:26px;
+   border-radius:50%;background:#25f4ee;color:#0b0f17;font-weight:bold;text-align:center;line-height:26px}
+ table{border-collapse:collapse;width:100%;margin-top:12px;font-size:15px}
+ td,th{border:1px solid #263244;padding:8px 10px;text-align:left}
+ th{background:#121826}
+ .tag{display:inline-block;background:#1c2534;border:1px solid #2d3b52;border-radius:99px;
+   padding:3px 12px;font-size:13px;margin:3px 4px 0 0}
+</style>
+</head>
+<body>
+<main>
+<p class="muted"><a href="./">← Retour au site AAROK</a></p>
+
+<h1>Aarok News Studio</h1>
+<p class="muted">Outil interne de production éditoriale — chaîne YouTube
+<a href="https://www.youtube.com/@aarok.gaming">@aarok.gaming</a></p>
+
+<div class="panel">
+<p><strong>Ce qu'est cet outil :</strong> un automate privé qui rédige, illustre et
+publie des vidéos courtes d'actualité du jeu vidéo sur une seule chaîne YouTube —
+celle de son auteur. Il n'est pas commercialisé, n'a pas d'utilisateurs, et
+n'expose aucune interface publique.</p>
+<p><strong>Ce qu'il n'est pas :</strong> pas un service tiers, pas un agrégateur
+public, pas un outil de re-upload. Aucune vidéo de tiers n'est téléchargée ni
+republiée. Aucune donnée d'utilisateur YouTube n'est lue ni conservée.</p>
+</div>
+
+<h2>Comment ça marche</h2>
+<ol class="steps">
+<li><strong>Veille</strong> — lecture des flux RSS publics d'une quinzaine de sites
+d'actualité jeu vidéo, toutes les 15 minutes.</li>
+<li><strong>Sélection</strong> — écart des doublons et des contenus non
+journalistiques ; classement par nature (annonce, mise à jour, analyse).</li>
+<li><strong>Rédaction</strong> — production d'une synthèse originale en français,
+de 20 à 30 secondes de lecture, citant sa source.</li>
+<li><strong>Habillage</strong> — voix de synthèse, sous-titres, illustration
+officielle du jeu, mention visible de la source à l'écran.</li>
+<li><strong>Publication</strong> — envoi via <code>youtube.videos.insert</code> sur
+la chaîne autorisée par OAuth, avec titre, description et source créditée.</li>
+</ol>
+
+<h2>Utilisation de l'API YouTube Data v3</h2>
+<table>
+<tr><th>Méthode</th><th>Usage</th><th>Fréquence</th></tr>
+<tr><td>videos.insert</td><td>Publication d'un short sur la chaîne du propriétaire</td><td>jusqu'à 30 / jour</td></tr>
+<tr><td>channels.list</td><td>Vérification que le jeton pointe la bonne chaîne</td><td>1 / jour</td></tr>
+<tr><td>subscriptions.list</td><td>Lecture des abonnements de la chaîne (studios suivis), pour orienter la veille</td><td>1 / jour</td></tr>
+<tr><td>playlistItems.list</td><td>Lecture des dernières publications de ces studios</td><td>1 / jour</td></tr>
+</table>
+<p class="muted">Aucune donnée d'utilisateur final n'est collectée, stockée ou
+transmise. Aucune donnée YouTube n'est utilisée à des fins publicitaires.</p>
+
+<h2>Conformité</h2>
+<span class="tag">Contenu original, jamais de re-upload</span>
+<span class="tag">Source citée à l'écran</span>
+<span class="tag">Publication sur sa propre chaîne uniquement</span>
+<span class="tag">Aucune monétisation de l'outil</span>
+<span class="tag">Aucune revente de données</span>
+<span class="tag">Retrait éditeur honoré sans délai</span>
+
+<h2>Documents</h2>
+<p>
+<a href="privacy.html">Politique de confidentialité</a> ·
+<a href="terms.html">Conditions d'utilisation</a> ·
+<a href="https://github.com/K413MP3R4">Contact</a>
+</p>
+
+<p class="muted" style="margin-top:40px">© 2026 Aarok — outil non commercial à usage personnel</p>
+</main>
+</body>
+</html>
