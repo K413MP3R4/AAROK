@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AAROK Gaming — Publication automatisée sur TikTok</title>
+<meta name="description" content="AAROK Gaming : outil privé de production et de publication de vidéos courtes d'actualité jeu vidéo sur le compte TikTok @aarok.tv de son auteur.">
+<style>
+  :root{--bg:#0b0f17;--panel:#121826;--line:#263244;--text:#f5f7fb;--muted:#a8b0bd;
+        --tiktok-cyan:#25f4ee;--tiktok-pink:#fe2c55}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);line-height:1.65;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif}
+  a{color:var(--tiktok-cyan)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,15,23,.95);
+         position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  nav{max-width:960px;margin:0 auto;padding:14px 18px;display:flex;flex-wrap:wrap;
+      gap:6px 22px;align-items:center}
+  nav .marque{font-weight:700;font-size:18px;margin-right:auto;color:var(--text);text-decoration:none}
+  nav .marque span{color:var(--tiktok-cyan)}
+  nav a{color:var(--muted);text-decoration:none;font-size:15px}
+  nav a:hover,nav a.actif{color:var(--tiktok-cyan)}
+  main{max-width:960px;margin:0 auto;padding:36px 18px 60px}
+  h1{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:0 0 8px}
+  h2{font-size:21px;margin:38px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h3{font-size:17px;margin:22px 0 6px}
+  .chapeau{color:var(--muted);font-size:17px;margin-bottom:4px}
+  .compte{display:inline-block;background:var(--panel);border:1px solid var(--line);
+          border-radius:99px;padding:5px 16px;font-size:14px;margin-top:14px}
+  .compte b{color:var(--tiktok-cyan)}
+  .panel{border:1px solid var(--line);background:var(--panel);border-radius:10px;
+         padding:18px 20px;margin-top:18px}
+  .grille{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:16px}
+  ol.etapes{counter-reset:s;list-style:none;padding:0;margin:14px 0 0}
+  ol.etapes li{counter-increment:s;padding:12px 0 12px 46px;position:relative;
+               border-bottom:1px solid #1c2534}
+  ol.etapes li:last-child{border-bottom:0}
+  ol.etapes li:before{content:counter(s);position:absolute;left:0;top:12px;width:28px;height:28px;
+    border-radius:50%;background:var(--tiktok-cyan);color:#0b0f17;font-weight:700;
+    text-align:center;line-height:28px;font-size:14px}
+  table{border-collapse:collapse;width:100%;margin-top:12px;font-size:15px}
+  td,th{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--panel);font-weight:600}
+  code{background:#1c2534;border-radius:4px;padding:2px 6px;font-size:14px;
+       font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+  .oui li{margin:6px 0}
+  .non{border-left:3px solid var(--tiktok-pink)}
+  .muted{color:var(--muted);font-size:14px}
+  footer{border-top:1px solid var(--line);margin-top:50px;padding:24px 18px;
+         color:var(--muted);font-size:14px}
+  footer div{max-width:960px;margin:0 auto}
+  footer a{margin-right:18px}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="marque" href="./">AAROK <span>Gaming</span></a>
+    <a href="#presentation">Présentation</a>
+    <a href="#fonctionnement">Fonctionnement</a>
+    <a href="#api">API TikTok</a>
+    <a href="#donnees">Données</a>
+    <a href="privacy.html">Confidentialité</a>
+    <a href="terms.html">Conditions</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <h1>Publication automatisée sur TikTok</h1>
+  <p class="chapeau">Outil privé de production éditoriale — actualité du jeu vidéo en français.</p>
+  <div class="compte">Compte concerné : <b>@aarok.tv</b> — le compte de l'auteur de l'outil</div>
+
+  <h2 id="presentation">Ce qu'est cette application</h2>
+  <p>
+    AAROK Gaming est un automate éditorial privé. Il suit l'actualité du jeu vidéo,
+    en rédige des synthèses courtes en français, les met en forme en vidéos verticales,
+    et les publie sur <b>un seul compte TikTok : celui de son auteur</b>.
+  </p>
+  <p>
+    L'application n'est pas commercialisée, n'a pas d'utilisateurs tiers, ne propose
+    aucune inscription et n'expose aucune interface publique. Elle tourne sur un
+    serveur personnel et ne sert qu'à alimenter le compte de son propriétaire.
+  </p>
+
+  <div class="panel non">
+    <h3>Ce qu'elle ne fait pas</h3>
+    <ul class="oui">
+      <li>Aucune vidéo de tiers n'est téléchargée, réutilisée ou republiée.</li>
+      <li>Aucune donnée d'utilisateur TikTok n'est lue, collectée ni conservée.</li>
+      <li>Aucun contenu n'est publié sur un compte autre que celui du propriétaire.</li>
+      <li>Aucun service n'est proposé à des tiers : ni inscription, ni compte client, ni API publique.</li>
+      <li>Aucune automatisation d'interactions sociales — pas de like, d'abonnement ni de commentaire automatique.</li>
+    </ul>
+  </div>
+
+  <h2 id="fonctionnement">Comment ça fonctionne</h2>
+  <ol class="etapes">
+    <li><b>Veille</b> — lecture des flux RSS publics d'une quinzaine de sites d'actualité
+        jeu vidéo, toutes les 15 minutes.</li>
+    <li><b>Sélection</b> — élimination des doublons et des contenus non journalistiques,
+        puis classement par nature : annonce, mise à jour, analyse, enquête.</li>
+    <li><b>Rédaction</b> — production d'une synthèse originale en français, de 20 à 30
+        secondes de lecture, citant explicitement sa source.</li>
+    <li><b>Habillage</b> — montage vertical, sous-titres, illustration officielle du jeu
+        et mention visible de la source à l'écran.</li>
+    <li><b>Publication</b> — envoi de la vidéo finie sur le compte TikTok autorisé par
+        OAuth, avec sa légende et sa source créditée.</li>
+  </ol>
+
+  <h2 id="api">Utilisation de l'API TikTok</h2>
+  <p>L'application appelle l'API <code>open.tiktokapis.com/v2</code> pour une seule chose : déposer ses propres vidéos.</p>
+
+  <table>
+    <tr><th>Élément</th><th>Usage</th></tr>
+    <tr>
+      <td><code>video.upload</code></td>
+      <td>Téléverser le fichier vidéo produit par l'automate.</td>
+    </tr>
+    <tr>
+      <td><code>video.publish</code></td>
+      <td>Publier cette vidéo sur le compte du propriétaire.</td>
+    </tr>
+    <tr>
+      <td><code>/post/publish/video/init/</code></td>
+      <td>Initialiser l'envoi, puis transfert direct du fichier (<code>FILE_UPLOAD</code>).
+          Aucune URL distante n'est fournie à TikTok.</td>
+    </tr>
+  </table>
+
+  <p class="muted" style="margin-top:14px">
+    Volume : au plus quelques vidéos par jour. L'autorisation est accordée par le
+    propriétaire du compte via le flux OAuth officiel de TikTok, et peut être révoquée
+    à tout moment depuis les réglages du compte.
+  </p>
+
+  <h2 id="donnees">Données traitées</h2>
+  <div class="grille">
+    <div class="panel">
+      <h3>Ce qui est stocké</h3>
+      <p class="muted">Uniquement le jeton d'accès OAuth du compte propriétaire, sur le
+      serveur privé, en accès restreint. Il sert exclusivement à publier.</p>
+    </div>
+    <div class="panel">
+      <h3>Ce qui ne l'est pas</h3>
+      <p class="muted">Aucune donnée personnelle de tiers, aucun profil, aucune statistique
+      d'audience, aucun contenu appartenant à d'autres utilisateurs.</p>
+    </div>
+  </div>
+  <p style="margin-top:16px">
+    Le détail figure dans la <a href="privacy.html">politique de confidentialité</a>
+    et les <a href="terms.html">conditions d'utilisation</a>.
+  </p>
+
+  <h2 id="contact">Contact</h2>
+  <p>
+    Pour toute question relative à cette application ou à son usage de l'API TikTok :
+    <a href="mailto:cat.crazy.hub@gmail.com">cat.crazy.hub@gmail.com</a>.
+  </p>
+  <p class="muted">Réponse sous quelques jours ouvrés.</p>
+
+</main>
+
+<footer>
+  <div>
+    <a href="./">Accueil</a>
+    <a href="privacy.html">Confidentialité</a>
+    <a href="terms.html">Conditions d'utilisation</a>
+    <a href="mailto:cat.crazy.hub@gmail.com">Contact</a>
+    <p style="margin-top:12px">AAROK Gaming — outil éditorial privé. Compte TikTok @aarok.tv.</p>
+  </div>
+</footer>
+
+</body>
+</html>
