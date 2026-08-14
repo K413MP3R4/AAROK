@@ -1,69 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conditions d'utilisation — Aarok News Studio</title>
+<title>Conditions d'utilisation — AAROK Gaming</title>
+<meta name="description" content="Conditions d'utilisation de l'automate éditorial AAROK Gaming : objet, absence d'utilisateurs tiers, contenu publié, respect des règles des plateformes.">
 <style>
- body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f17;color:#f5f7fb;line-height:1.65}
- main{max-width:860px;margin:0 auto;padding:40px 18px}
- a{color:#25f4ee} h1{font-size:30px;line-height:1.2} h2{font-size:20px;margin-top:30px}
- .muted{color:#a8b0bd;font-size:14px}
- .panel{border:1px solid #263244;background:#121826;border-radius:8px;padding:18px;margin-top:22px}
- ul{padding-left:20px}
+  :root{--bg:#0b0f17;--panel:#121826;--line:#263244;--text:#f5f7fb;--muted:#a8b0bd;--cyan:#25f4ee}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);line-height:1.65;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif}
+  a{color:var(--cyan)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,15,23,.95);
+         position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  nav{max-width:900px;margin:0 auto;padding:14px 18px;display:flex;flex-wrap:wrap;
+      gap:6px 22px;align-items:center}
+  nav .marque{font-weight:700;font-size:18px;margin-right:auto;color:var(--text);text-decoration:none}
+  nav .marque span{color:var(--cyan)}
+  nav a{color:var(--muted);text-decoration:none;font-size:15px}
+  nav a:hover,nav a.actif{color:var(--cyan)}
+  main{max-width:900px;margin:0 auto;padding:36px 18px 60px}
+  h1{font-size:clamp(24px,4vw,32px);line-height:1.2;margin:0 0 6px}
+  h2{font-size:20px;margin:34px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .muted{color:var(--muted);font-size:14px}
+  .panel{border:1px solid var(--line);background:var(--panel);border-radius:10px;
+         padding:18px 20px;margin-top:20px}
+  ul{padding-left:20px} li{margin:7px 0}
+  footer{border-top:1px solid var(--line);margin-top:50px;padding:24px 18px;
+         color:var(--muted);font-size:14px}
+  footer div{max-width:900px;margin:0 auto} footer a{margin-right:18px}
 </style>
 </head>
 <body>
+
+<header>
+  <nav>
+    <a class="marque" href="./">AAROK <span>Gaming</span></a>
+    <a href="tiktok-app.html">Application TikTok</a>
+    <a href="news-studio.html">News Studio</a>
+    <a href="privacy.html">Confidentialité</a>
+    <a href="terms.html" class="actif">Conditions</a>
+  </nav>
+</header>
+
 <main>
-<p class="muted"><a href="./">← Retour au site AAROK</a></p>
 
-<h1>Conditions d'utilisation</h1>
-<p class="muted">Aarok News Studio — dernière mise à jour : 9 août 2026</p>
+  <h1>Conditions d'utilisation</h1>
+  <p class="muted">AAROK Gaming — dernière mise à jour : 14 août 2026</p>
 
-<div class="panel">
-<p>Aarok News Studio est un outil privé à usage unique, exploité par son auteur pour
-alimenter sa propre chaîne YouTube. Il n'est ni distribué, ni vendu, ni ouvert à
-l'inscription.</p>
-</div>
+  <p>
+    AAROK Gaming est un outil privé à usage unique, exploité par son auteur pour
+    alimenter ses propres comptes. Il n'est ni distribué, ni vendu, ni ouvert à
+    l'inscription.
+  </p>
 
-<h2>1. Objet</h2>
-<p>Produire des vidéos courtes d'actualité du jeu vidéo — synthèse rédigée, voix de
-synthèse, habillage graphique — et les publier sur la chaîne YouTube « Aarok »
-via l'API YouTube Data v3.</p>
+  <h2>1. Objet</h2>
+  <p>
+    Produire des contenus courts d'actualité du jeu vidéo — synthèse rédigée, habillage
+    graphique, montage vertical — et les publier sur les comptes de son auteur via les
+    API officielles de TikTok, YouTube, Instagram, Facebook, X, Mastodon et Bluesky.
+  </p>
 
-<h2>2. Absence d'utilisateurs tiers</h2>
-<p>Aucun compte tiers, aucune inscription, aucun accès public à l'outil. La seule
-identité connectée est celle du propriétaire de la chaîne.</p>
+  <h2>2. Absence d'utilisateurs tiers</h2>
+  <p>
+    Aucun compte tiers, aucune inscription, aucun accès public à l'outil. La seule
+    identité connectée est celle du propriétaire des comptes. L'application n'offre
+    aucun service à des tiers et ne dispose d'aucune interface publique.
+  </p>
 
-<h2>3. Contenu publié</h2>
-<ul>
-<li>Les textes sont des synthèses originales, rédigées à partir d'informations
-publiques ; ils ne reproduisent pas les articles sources.</li>
-<li>La source est créditée dans chaque vidéo et dans sa description.</li>
-<li>Aucun contenu de tiers n'est réenvoyé (pas de re-upload de vidéos).</li>
-<li>Aucun contenu trompeur, sensationnaliste ou généré en masse sans relecture.</li>
-</ul>
+  <h2>3. Contenu publié</h2>
+  <ul>
+    <li>Les textes sont des <b>synthèses originales</b>, rédigées à partir d'informations
+        publiques ; ils ne reproduisent pas les articles sources.</li>
+    <li>La source est <b>créditée</b> dans chaque publication.</li>
+    <li><b>Aucun contenu de tiers n'est réenvoyé</b> : pas de re-upload de vidéos, pas de
+        reprise de contenu appartenant à d'autres créateurs.</li>
+    <li>Aucun contenu trompeur, sensationnaliste, ni généré en masse sans relecture.</li>
+    <li>Aucun contenu réservé aux adultes, violent, haineux ou illégal.</li>
+  </ul>
 
-<h2>4. Respect des règles des plateformes</h2>
-<p>L'outil se conforme aux
-<a href="https://developers.google.com/youtube/terms/api-services-terms-of-service">Conditions
-d'utilisation des Services API YouTube</a> et au
-<a href="https://developers.google.com/youtube/terms/developer-policies">Règlement pour
-les développeurs</a>. Aucune tentative de contournement de quota, aucun stockage de
-données d'utilisateur YouTube, aucune revente de données.</p>
+  <h2>4. Respect des règles des plateformes</h2>
+  <p>L'outil se conforme aux règles de chaque plateforme sur laquelle il publie :</p>
+  <ul>
+    <li><a href="https://developers.tiktok.com/doc/terms-of-service" target="_blank" rel="noopener">Conditions des services développeur TikTok</a>
+        et <a href="https://www.tiktok.com/community-guidelines" target="_blank" rel="noopener">règles communautaires TikTok</a></li>
+    <li><a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" target="_blank" rel="noopener">Conditions des services API YouTube</a></li>
+    <li>Conditions des plateformes Meta, X, Mastodon et Bluesky pour les comptes concernés</li>
+  </ul>
 
-<h2>5. Limitation de responsabilité</h2>
-<p>L'outil est fourni en l'état, sans garantie. Son auteur en est le seul utilisateur
-et le seul responsable.</p>
+  <div class="panel">
+    <p style="margin:0">
+      En particulier : aucune automatisation d'interactions sociales. L'outil ne
+      like pas, ne s'abonne pas, ne commente pas et n'envoie aucun message. Il se
+      limite à déposer les publications de son propriétaire.
+    </p>
+  </div>
 
-<h2>6. Modification</h2>
-<p>Ces conditions peuvent évoluer. Toute évolution du cas d'usage déclaré auprès de
-YouTube fera l'objet d'une notification écrite préalable à YouTube.</p>
+  <h2>5. Volume de publication</h2>
+  <p>
+    Le rythme est volontairement modéré — quelques publications par jour au plus — afin
+    de rester conforme aux limites d'usage des API et aux règles anti-spam de chaque
+    plateforme.
+  </p>
 
-<h2>7. Contact</h2>
-<p><a href="https://github.com/K413MP3R4">github.com/K413MP3R4</a></p>
+  <h2>6. Propriété intellectuelle</h2>
+  <p>
+    Les illustrations utilisées proviennent des visuels officiels des jeux concernés ou
+    de banques d'images libres de droits, créditées le cas échéant. Toute demande de
+    retrait émanant d'un ayant droit sera traitée sans délai.
+  </p>
 
-<p class="muted" style="margin-top:40px">© 2026 Aarok</p>
+  <h2>7. Responsabilité</h2>
+  <p>
+    L'outil étant privé et sans utilisateur tiers, il ne fournit aucun service et
+    n'engage aucune obligation envers des tiers. Les informations publiées sont des
+    synthèses d'actualité fournies à titre informatif.
+  </p>
+
+  <h2>8. Interruption</h2>
+  <p>
+    L'auteur peut suspendre ou arrêter l'outil à tout moment, sans préavis. Les accès
+    accordés aux API peuvent être révoqués depuis les réglages de chaque plateforme.
+  </p>
+
+  <h2>9. Contact</h2>
+  <p>
+    Pour toute question ou demande relative à ces conditions :
+    <a href="mailto:cat.crazy.hub@gmail.com">cat.crazy.hub@gmail.com</a>.
+  </p>
+
 </main>
+
+<footer>
+  <div>
+    <a href="./">Accueil</a>
+    <a href="tiktok-app.html">Application TikTok</a>
+    <a href="privacy.html">Confidentialité</a>
+    <a href="mailto:cat.crazy.hub@gmail.com">Contact</a>
+    <p style="margin-top:12px">AAROK Gaming — outil éditorial privé.</p>
+  </div>
+</footer>
+
 </body>
 </html>

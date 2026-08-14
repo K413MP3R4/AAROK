@@ -1,88 +1,161 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Politique de confidentialité — Aarok News Studio</title>
+<title>Politique de confidentialité — AAROK Gaming</title>
+<meta name="description" content="Politique de confidentialité de l'automate éditorial AAROK Gaming : données traitées, conservation, droits, contact.">
 <style>
- body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0f17;color:#f5f7fb;line-height:1.65}
- main{max-width:860px;margin:0 auto;padding:40px 18px}
- a{color:#25f4ee} h1{font-size:30px;line-height:1.2} h2{font-size:20px;margin-top:30px}
- .muted{color:#a8b0bd;font-size:14px}
- .panel{border:1px solid #263244;background:#121826;border-radius:8px;padding:18px;margin-top:22px}
- ul{padding-left:20px}
+  :root{--bg:#0b0f17;--panel:#121826;--line:#263244;--text:#f5f7fb;--muted:#a8b0bd;--cyan:#25f4ee}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);line-height:1.65;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif}
+  a{color:var(--cyan)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,15,23,.95);
+         position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  nav{max-width:900px;margin:0 auto;padding:14px 18px;display:flex;flex-wrap:wrap;
+      gap:6px 22px;align-items:center}
+  nav .marque{font-weight:700;font-size:18px;margin-right:auto;color:var(--text);text-decoration:none}
+  nav .marque span{color:var(--cyan)}
+  nav a{color:var(--muted);text-decoration:none;font-size:15px}
+  nav a:hover,nav a.actif{color:var(--cyan)}
+  main{max-width:900px;margin:0 auto;padding:36px 18px 60px}
+  h1{font-size:clamp(24px,4vw,32px);line-height:1.2;margin:0 0 6px}
+  h2{font-size:20px;margin:34px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .muted{color:var(--muted);font-size:14px}
+  .panel{border:1px solid var(--line);background:var(--panel);border-radius:10px;
+         padding:18px 20px;margin-top:20px}
+  ul{padding-left:20px} li{margin:7px 0}
+  table{border-collapse:collapse;width:100%;margin-top:12px;font-size:15px}
+  td,th{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--panel);font-weight:600}
+  code{background:#1c2534;border-radius:4px;padding:2px 6px;font-size:14px;
+       font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+  footer{border-top:1px solid var(--line);margin-top:50px;padding:24px 18px;
+         color:var(--muted);font-size:14px}
+  footer div{max-width:900px;margin:0 auto} footer a{margin-right:18px}
 </style>
 </head>
 <body>
+
+<header>
+  <nav>
+    <a class="marque" href="./">AAROK <span>Gaming</span></a>
+    <a href="tiktok-app.html">Application TikTok</a>
+    <a href="news-studio.html">News Studio</a>
+    <a href="privacy.html" class="actif">Confidentialité</a>
+    <a href="terms.html">Conditions</a>
+  </nav>
+</header>
+
 <main>
-<p class="muted"><a href="./">← Retour au site AAROK</a></p>
 
-<h1>Politique de confidentialité</h1>
-<p class="muted">Aarok News Studio — dernière mise à jour : 9 août 2026</p>
+  <h1>Politique de confidentialité</h1>
+  <p class="muted">AAROK Gaming — dernière mise à jour : 14 août 2026</p>
 
-<div class="panel">
-<p>Aarok News Studio est un outil interne, non commercial, utilisé par une seule
-personne pour produire et publier des vidéos courtes d'actualité du jeu vidéo sur
-<strong>sa propre chaîne YouTube</strong> (« Aarok », @aarok.gaming). Il n'est pas
-proposé à des tiers, ne dispose d'aucun compte utilisateur et ne collecte aucune
-donnée auprès du public.</p>
-</div>
+  <p>
+    AAROK Gaming est un automate éditorial <b>privé et non commercial</b>, exploité par
+    une seule personne pour produire et publier des contenus courts d'actualité du jeu
+    vidéo sur <b>ses propres comptes</b>. Il n'est pas proposé à des tiers, ne dispose
+    d'aucun compte utilisateur, et ne collecte aucune donnée auprès du public.
+  </p>
 
-<h2>1. Données traitées</h2>
-<ul>
-<li><strong>Jeton OAuth YouTube</strong> du propriétaire de la chaîne, obtenu via l'écran
-de consentement Google, servant uniquement à publier sur cette chaîne.</li>
-<li><strong>Articles de presse publics</strong> collectés via les flux RSS ouverts des
-sites d'actualité jeu vidéo (titre, chapô, image d'illustration, lien source).</li>
-<li><strong>Métadonnées des vidéos publiées</strong> (identifiant, titre, date) conservées
-localement pour éviter les doublons.</li>
-</ul>
-<p>Aucune donnée personnelle de spectateur, d'abonné ou de tiers n'est collectée,
-consultée ni stockée. Aucune donnée d'utilisateur final YouTube n'est traitée.</p>
+  <h2>1. Plateformes concernées</h2>
+  <p>L'outil publie exclusivement sur les comptes suivants, tous détenus par son auteur :</p>
+  <table>
+    <tr><th>Plateforme</th><th>Compte</th></tr>
+    <tr><td>TikTok</td><td>@aarok.tv</td></tr>
+    <tr><td>YouTube</td><td>Aarok (@aarok.gaming)</td></tr>
+    <tr><td>Instagram</td><td>@aarok.gaming</td></tr>
+    <tr><td>Facebook</td><td>Page AAROK</td></tr>
+    <tr><td>X</td><td>@AarokTV</td></tr>
+    <tr><td>Mastodon</td><td>@Aarok@mastodon.social</td></tr>
+    <tr><td>Bluesky</td><td>@aarok-g.bsky.social</td></tr>
+  </table>
 
-<h2>2. Utilisation des données</h2>
-<p>Les données servent exclusivement à composer une vidéo courte et à l'envoyer sur
-la chaîne YouTube autorisée par son propriétaire. Aucun autre usage.</p>
+  <h2>2. Données traitées</h2>
+  <ul>
+    <li><b>Jetons d'accès OAuth</b> des comptes du propriétaire, obtenus via les écrans
+        de consentement officiels de chaque plateforme, servant uniquement à publier
+        sur ces comptes.</li>
+    <li><b>Articles de presse publics</b> collectés via les flux RSS ouverts de sites
+        d'actualité jeu vidéo : titre, chapô, image d'illustration, lien source.</li>
+    <li><b>Métadonnées des publications</b> (identifiant, titre, date), conservées
+        localement pour éviter les doublons.</li>
+  </ul>
 
-<h2>3. Stockage et conservation</h2>
-<p>Tout est stocké localement sur un serveur privé, sur disque chiffré, sans accès
-extérieur. Les jetons OAuth sont conservés dans un répertoire à accès restreint.
-Les fichiers de production (vidéos, images, textes) sont supprimés automatiquement
-après publication. L'historique des articles traités est conservé 30 jours.</p>
+  <div class="panel">
+    <p style="margin:0">
+      <b>Aucune donnée personnelle de tiers n'est collectée, consultée ni stockée</b> —
+      ni spectateur, ni abonné, ni utilisateur d'aucune plateforme. L'outil ne lit
+      aucun profil, aucune liste d'abonnés, aucun message privé et aucune statistique
+      d'audience nominative.
+    </p>
+  </div>
 
-<h2>4. Partage avec des tiers</h2>
-<p>Aucune donnée n'est vendue, louée, échangée ni transmise à des annonceurs ou à
-des courtiers en données. Les seuls destinataires sont les API officielles des
-plateformes de publication (YouTube, Instagram, TikTok, X), pour la stricte
-exécution de la publication demandée.</p>
+  <h2>3. Utilisation des données</h2>
+  <p>
+    Les données servent exclusivement à composer une publication et à l'envoyer sur les
+    comptes autorisés par leur propriétaire. Aucun autre usage : ni revente, ni partage
+    avec des tiers, ni profilage, ni publicité ciblée.
+  </p>
 
-<h2>5. Contenus de tiers</h2>
-<p>Les vidéos s'appuient sur des articles de presse publiquement accessibles. Le
-contenu diffusé est une <strong>synthèse rédigée originale</strong>, jamais une
-reproduction de l'article. La source est systématiquement créditée à l'écran.
-Toute demande de retrait émanant d'un éditeur est honorée sans délai.</p>
+  <h2>4. Stockage et conservation</h2>
+  <p>
+    Tout est stocké localement sur un serveur privé, sans accès extérieur. Les jetons
+    OAuth sont conservés dans un répertoire à accès restreint. Les métadonnées de
+    publication sont conservées le temps nécessaire à la détection des doublons,
+    puis purgées automatiquement au bout de 30 jours.
+  </p>
 
-<h2>6. Services API YouTube</h2>
-<p>Cet outil utilise les Services API YouTube. En l'utilisant, son propriétaire est
-lié par les <a href="https://www.youtube.com/t/terms">Conditions d'utilisation de
-YouTube</a> et par les
-<a href="https://policies.google.com/privacy">Règles de confidentialité de Google</a>.
-La révocation de l'accès s'effectue à tout moment via la page
-<a href="https://myaccount.google.com/permissions">Sécurité du compte Google</a>.</p>
+  <h2>5. Partage avec des tiers</h2>
+  <p>
+    Aucune donnée n'est transmise à des tiers, en dehors des appels aux API officielles
+    des plateformes listées ci-dessus, strictement nécessaires à la publication.
+  </p>
 
-<h2>7. Suppression des données</h2>
-<p>Le propriétaire peut à tout moment révoquer le jeton OAuth, supprimer les fichiers
-locaux et l'historique. Aucune copie n'est conservée ailleurs.</p>
+  <h2>6. Révocation de l'accès</h2>
+  <p>
+    Le propriétaire des comptes peut révoquer à tout moment l'autorisation accordée à
+    l'application, depuis les réglages de sécurité de chaque plateforme. La révocation
+    prend effet immédiatement et interrompt toute publication.
+  </p>
 
-<h2>8. Sécurité</h2>
-<p>Accès au serveur par clé SSH uniquement, pare-feu actif, secrets hors du dépôt de
-code, connexions sortantes en HTTPS.</p>
+  <h2>7. Sécurité</h2>
+  <p>
+    Le serveur est à accès restreint, protégé par authentification par clé. Les
+    identifiants ne sont jamais publiés dans le code source ni dans un dépôt public.
+  </p>
 
-<h2>9. Contact</h2>
-<p>Pour toute question ou demande de retrait :
-<a href="https://github.com/K413MP3R4">github.com/K413MP3R4</a></p>
+  <h2>8. Enfants</h2>
+  <p>
+    L'outil ne s'adresse pas aux mineurs, ne collecte aucune donnée les concernant et
+    ne propose aucune interaction avec le public.
+  </p>
 
-<p class="muted" style="margin-top:40px">© 2026 Aarok</p>
+  <h2>9. Modifications</h2>
+  <p>
+    Toute évolution de cette politique sera publiée sur cette page, avec mise à jour de
+    la date figurant en tête de document.
+  </p>
+
+  <h2>10. Contact</h2>
+  <p>
+    Pour toute question relative à cette politique ou aux données traitées :
+    <a href="mailto:cat.crazy.hub@gmail.com">cat.crazy.hub@gmail.com</a>.
+  </p>
+
 </main>
+
+<footer>
+  <div>
+    <a href="./">Accueil</a>
+    <a href="tiktok-app.html">Application TikTok</a>
+    <a href="terms.html">Conditions d'utilisation</a>
+    <a href="mailto:cat.crazy.hub@gmail.com">Contact</a>
+    <p style="margin-top:12px">AAROK Gaming — outil éditorial privé.</p>
+  </div>
+</footer>
+
 </body>
 </html>
